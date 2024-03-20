@@ -2,9 +2,11 @@ class Solution:
     def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:
         n = len(names)
         for i in range(n-1):
-            for j in range(n-i-1):
-                if heights[j] < heights[j+1]:
-                    names[j],names[j+1] = names[j+1],names[j]
-                    heights[j],heights[j+1] = heights[j+1],heights[j]
+            min_index = i
+            for j in range(i+1,n):
+                if heights[j] > heights[min_index]:
+                    min_index = j
+            names[i],names[min_index] = names[min_index],names[i]
+            heights[i],heights[min_index] = heights[min_index],heights[i]
         return names
         
