@@ -1,14 +1,27 @@
-class Solution:
-    def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:
-        n = len(names)
-        for i in range(1, n):
-            key_name = names[i]
-            key_height = heights[i]
-            j = i - 1
-            while j >= 0 and heights[j] < key_height:
-                names[j + 1] = names[j]
-                heights[j + 1] = heights[j]
-                j -= 1
-            names[j + 1] = key_name
-            heights[j + 1] = key_height
-        return names
+class Solution(object):
+    def sortPeople(self, names, heights):
+        dict = {}
+        lst = [''] * len(names)
+        for i in range(len(names)):
+            dict[heights[i]] = names[i]
+        maximum = max(heights)
+        count = [0] * (maximum + 1)
+        for num in heights:
+            count[num] += 1
+
+        target = 0
+        for index, value in enumerate(count):
+            for i in range(value):
+                heights[target] = index
+                target += 1
+        k = 0
+        for j in range(len(heights)-1,-1,-1):
+            lst[k]=dict[heights[j]]
+            k += 1
+        return lst
+
+
+
+
+        
+        
