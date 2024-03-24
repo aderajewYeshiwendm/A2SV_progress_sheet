@@ -8,38 +8,38 @@ class Solution:
 
         
         # BFS
-        # visited = set()
-        # queue = deque([source])
+        visited = set()
+        queue = deque([source])
 
-        # while queue:
-        #     vertex = queue.popleft()
+        while queue:
+            vertex = queue.popleft()
 
-        #     if vertex == destination:
-        #         return True
+            if vertex == destination:
+                return True
             
-        #     visited.add(vertex)
+            visited.add(vertex)
 
-        #     for neighbour in graph[vertex]:
+            for neighbour in graph[vertex]:
 
-        #         if neighbour not in visited:
-        #             visited.add(neighbour)
-        #             queue.append(neighbour)
+                if neighbour not in visited:
+                    visited.add(neighbour)
+                    queue.append(neighbour)
 
 
         # DFS
-        visited = set()
+        # visited = set()
 
-        def dfs(current, destination, visited):
+        # def dfs(current, destination, visited):
 
-            if current == destination:
-                return True
+        #     if current == destination:
+        #         return True
             
-            visited.add(current)
+        #     visited.add(current)
 
-            for neighbour in graph[current]:
-                if neighbour not in visited:
-                    if dfs(neighbour, destination, visited):
-                        return True
-            return False
+        #     for neighbour in graph[current]:
+        #         if neighbour not in visited:
+        #             if dfs(neighbour, destination, visited):
+        #                 return True
+        #     return False
 
-        return dfs(source, destination, visited)
+        # return dfs(source, destination, visited)
