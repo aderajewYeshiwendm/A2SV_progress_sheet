@@ -1,17 +1,17 @@
 class Solution:
     def reverseWords(self, s: str) -> str:
-        ans = ''
-        j = 1
+        ans = s.split(' ')
+
         res = ''
-        for i in range(len(s)):
+        for i in ans:
             
-            res += s[i]
+            b = len(i) - 1
             
-            if s[i] == ' ':
-                ans += res[::-1]
-                res = ''
-            else:pass
-        ans = ans + ' ' + res[::-1]
-        return ans[1:]
+            while b >= 0:
+                res += i[b]
+                b -= 1
+            res += ' '
+        
+        return res[:-1]
         
         
