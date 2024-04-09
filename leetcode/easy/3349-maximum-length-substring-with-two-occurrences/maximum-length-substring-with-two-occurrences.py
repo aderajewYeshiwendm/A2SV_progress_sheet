@@ -2,7 +2,7 @@ class Solution:
     def maximumLengthSubstring(self, s: str) -> int:
         substr = []
         for i in range(len(s)):
-            for j in range(i+1, len(s)):
+            for j in range(i, len(s)):
                 subs = s[i:j+1]
                 substr.append(subs)
         ma = 0
