@@ -9,10 +9,8 @@ class Solution:
                 no_whites = i.count('W')
                 min_operations = min(no_whites, min_operations)
             return min_operations
-        else:
-            sw = list(blocks)
-            c = sw.count('W')
-            return c
+        
+        return blocks.count('W')
         
               
 
