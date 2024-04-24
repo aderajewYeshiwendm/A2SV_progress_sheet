@@ -4,8 +4,6 @@ class DataStream:
         self.k = k
         self.val = value
         self.t = k
-        
-
     def consec(self, num: int) -> bool:
         if self.t > 0:
             self.t -= 1
@@ -13,6 +11,5 @@ class DataStream:
         if num != self.val:
             self.t = self.k
         
-        if self.t:
-            return False
-        return True
+        
+        return not self.t
