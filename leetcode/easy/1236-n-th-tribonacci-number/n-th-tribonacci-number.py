@@ -1,13 +1,10 @@
 class Solution:
     def tribonacci(self, n: int) -> int:
-        if n == 0:
-            return 0
-        elif n== 1:
-            return 1
-        elif n == 2:
-            return 1
-        elif n == 3:
-            return 2
+        if n == 0 or n==1:
+            return n
+        elif n <= 3:
+            return n -1
+        
         else:
             t0 = 0
             t1 = 1
@@ -18,9 +15,6 @@ class Solution:
                 t0 = t1
                 t1 = t2
                 t2 = temp
-                
-                
-                
                 
             return t0 + t1 + t2
         
