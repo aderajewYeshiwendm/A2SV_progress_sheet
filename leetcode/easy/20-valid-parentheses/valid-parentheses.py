@@ -11,9 +11,8 @@ class Solution(object):
                     return False
             
 
-        if len(stack) > 0:
-            return False
-        return True
+        
+        return not stack
                 
         
         
