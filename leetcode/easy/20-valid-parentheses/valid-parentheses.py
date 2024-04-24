@@ -9,8 +9,7 @@ class Solution(object):
             elif c in brackets:
                 if stack == [] or stack.pop() != brackets[c]:
                     return False
-            else:
-                return False
+            
 
         if len(stack) > 0:
             return False
