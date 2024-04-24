@@ -12,16 +12,15 @@ class Solution:
             t0 = 0
             t1 = 1
             t2 = 1
-            ans = 0
             for i in range(3, n):
                 temp = t1 + t2 + t0
                 
                 t0 = t1
                 t1 = t2
                 t2 = temp
-                ans = t0 + t1 + t2
                 
                 
                 
-            return ans
+                
+            return t0 + t1 + t2
         
